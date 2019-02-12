@@ -13,9 +13,20 @@
 </head>
 <body>
 
-<c:set var = "stuff" value="<%= new java.util.Date()%>"/>
+<%
+    String [] cities = {"Mumbai", "Singapore", "Philadelphia"};
 
-Time on the server is ${stuff}
+    session.setAttribute("myCities", cities);
+%>
+
+
+<c:forEach var="stuff" items="${myCities}">
+
+    ${stuff}<br>
+
+</c:forEach>
+
+
 
 
 </body>
