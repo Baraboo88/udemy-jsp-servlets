@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.bara.jsp.tagdemo.Student" %>
 <%@ page import="java.util.ArrayList" %><%--
@@ -58,6 +59,17 @@
 </c:forEach>
 
 </table>
+
+Total: ${fn:length(mystudents)}
+
+<c:set var="data" value="Singapore,Tokio,Mumbai,London"/>
+
+<c:set var="citiesArray" value="${fn:split(data,',' )}"/>
+
+<c:forEach var="printdata" items="${citiesArray}">
+    ${printdata}
+    <br>
+</c:forEach>
 
 </body>
 </html>
